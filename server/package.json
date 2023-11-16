@@ -2,21 +2,11 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "watch": "nodemon",
-    "seed": "node seeders/seed.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@apollo/client": "^3.8.7",
-    "graphql": "^16.8.1",
-    "mongoose": "^8.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  }
+  "license": "ISC"
 }
