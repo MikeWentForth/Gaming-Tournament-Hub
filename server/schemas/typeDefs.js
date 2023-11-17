@@ -6,6 +6,8 @@ const typeDefs = `
         players: [Player]
         join : Boolean
         full : Boolean
+        tournamentHost: String
+        createdAt: String
     }
 
     type Player {
