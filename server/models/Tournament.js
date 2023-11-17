@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/auth');
 
+const playerSchema = require('./Player');
+
 const tournamentSchema = new Schema({
   tournName: {
     type: String,
@@ -8,6 +10,17 @@ const tournamentSchema = new Schema({
     minlength: 1,
     maxlength: 280,
     trim: true,
+  },
+  playerSize: {
+    type: Number,
+    required: true,
+  },
+  players: [playerSchema],
+  join: {
+    type: Boolean,
+  },
+  full: {
+    type: Boolean,
   },
   tournamentHost: {
     type: String,
