@@ -42,4 +42,4 @@ playerSchema.methods.isCorrectPassword = async function (password) {
 
 const Player = model('Player', playerSchema);
 
-module.exports = Player;
+module.exports = { playerSchema, Player };

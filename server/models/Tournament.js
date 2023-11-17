@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/auth');
 
-const playerSchema = require('./Player');
+const {playerSchema} = require('./Player');
 
 const tournamentSchema = new Schema({
   tournName: {
