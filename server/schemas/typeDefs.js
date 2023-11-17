@@ -4,8 +4,8 @@ const typeDefs = `
         tournName: String
         playerSize: Int
         players: [Player]
-        join : Boolean
-        full : Boolean
+        join: Boolean
+        full: Boolean
         tournamentHost: String
         createdAt: String
     }
@@ -15,7 +15,7 @@ const typeDefs = `
         username: String
         email: String
         password: String
-        tournament: [Tournament]!    
+        tournaments: [Tournament]!    
     }
 
     type Auth {
@@ -33,7 +33,7 @@ const typeDefs = `
 
     type Mutation {
         addPlayer(username: String!, email: String!, password: String!): Auth
-        deletePlayer(playerId: ID!)
+        deletePlayer(playerId: ID!): Player
         login(email: String!, password: String!): Auth
         addTournament(tournamentName: String!): Tournament
         removeTournament(tournamentId: ID!): Tournament
