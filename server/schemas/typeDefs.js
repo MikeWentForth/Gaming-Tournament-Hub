@@ -24,7 +24,7 @@ const typeDefs = `
       }
     
     type Query {
-        tournament(tournamentid: ID): Tournament
+        tournament(tournamentId: ID): Tournament
         tournaments:[Tournament]
         player(username: String!): Player
         players:[Player]
