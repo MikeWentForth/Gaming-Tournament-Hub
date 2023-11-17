@@ -22,10 +22,11 @@ const typeDefs = `
       }
     
     type Query {
-        tournament(_id: ID): Tournament
+        tournament(tournamentid: ID): Tournament
         tournaments:[Tournament]
-        player(_id: ID): Player
+        player(username: String!): Player
         players:[Player]
+        me: Player
     }
 
     type Mutation {
