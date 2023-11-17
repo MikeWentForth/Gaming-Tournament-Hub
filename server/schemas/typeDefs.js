@@ -3,7 +3,6 @@ const typeDefs = `
         _id: ID
         tournName: String
         playerSize: Int
-        players: [Player]
         join: Boolean
         full: Boolean
         tournamentHost: String

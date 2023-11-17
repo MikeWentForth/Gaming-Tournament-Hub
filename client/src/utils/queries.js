@@ -23,7 +23,6 @@ export const QUERY_TOURNMENTS = gql`
       tournamentHost
       createdAt
       playerSize
-      players
       join
       full
     }
@@ -38,7 +37,6 @@ export const QUERY_SINGLE_TOURNAMENT = gql`
       tournamentHost
       createdAt
       playerSize
-      players
       join
       full
     }

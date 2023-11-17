@@ -1,3 +1,4 @@
+const  tournamentSchema  = require('./Tournament')
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -19,12 +20,7 @@ const playerSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  tournaments: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Thought',
-    },
-  ],
+  tournaments: [tournamentSchema],
 });
 
 playerSchema.pre('save', async function (next) {
@@ -42,4 +38,4 @@ playerSchema.methods.isCorrectPassword = async function (password) {
 
 const Player = model('Player', playerSchema);
 
-module.exports = { playerSchema, Player };
+module.exports =  Player ;
