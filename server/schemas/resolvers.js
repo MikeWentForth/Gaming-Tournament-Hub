@@ -1,13 +1,13 @@
-const { User, Tournament } = require('../models');
+const { Player, Tournament } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
         players: async () => {
-            return User.find().populate('tournaments')
+            return Player.find().populate('tournaments')
         },
         player: async (parent, { username }) => {
-            return User.findOne({ username }).populate('tournaments');
+            return Player.findOne({ username }).populate('tournaments');
         },
         tournament: async (parent, { tournamentId }) => {
             return Tournament.findOne({ _id: tournamentId });
@@ -18,7 +18,7 @@ const resolvers = {
         },
         me: async (parent, args, context) => {
             if (context.user) {
-                return User.findOne({ _id: context.user._id }).populate('tournaments');
+                return Player.findOne({ _id: context.user._id }).populate('tournaments');
             }
             throw AuthenticationError;
         },
@@ -26,12 +26,12 @@ const resolvers = {
 
     Mutation: {
         addPlayer: async (parent, { username, email, password }) => {
-            const user = await User.create({ username, email, password });
-            const token = signToken(user);
-            return { token, user };
+            const player = await Player.create({ username, email, password });
+            const token = signToken(player);
+            return { token, player };
         },
         login: async (parent, { email, password }) => {
-            const player = await User.findOne({ email });
+            const player = await Player.findOne({ email });
             if (!player) {
                 throw AuthenticationError;
             }
@@ -49,7 +49,7 @@ const resolvers = {
                     tournamentHost: context.user.username,
                 });
 
-                await User.findOneAndUpdate(
+                await Player.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { tournament: tournament._id } }
                 );
@@ -66,7 +66,7 @@ const resolvers = {
                 tournamentHost: context.user.username,
               });
       
-              await User.findOneAndUpdate(
+              await Player.findOneAndUpdate(
                 { _id: context.user._id },
                 { $pull: { tournament: tournament._id } }
               );
