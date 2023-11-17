@@ -15,6 +15,7 @@ const typeDefs = `
 
     type Query {
         tournament(_id: ID): Tournament
+        tournaments:[Tournament]
         player(_id: ID): Player
     }
 
