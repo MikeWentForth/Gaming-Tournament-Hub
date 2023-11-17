@@ -1,60 +1,62 @@
-// import { gql } from '@apollo/client';
+import { gql } from '@apollo/client';
 
-// export const QUERY_USER = gql`
-//   query user($username: String!) {
-//     user(username: $username) {
-//       _id
-//       username
-//       email
-//       thoughts {
-//         _id
-//         thoughtText
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const QUERY_PLAYER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      tournaments {
+        _id
+        tournName
+        createdAt
+      }
+    }
+  }
+`;
 
-// export const QUERY_THOUGHTS = gql`
-//   query getThoughts {
-//     thoughts {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//     }
-//   }
-// `;
+export const QUERY_TOURNMENTS = gql`
+  query getTournaments {
+    tournaments {
+      _id
+      tournName
+      tournamentHost
+      createdAt
+      playerSize
+      players
+      join
+      full
+    }
+  }
+`;
 
-// export const QUERY_SINGLE_THOUGHT = gql`
-//   query getSingleThought($thoughtId: ID!) {
-//     thought(thoughtId: $thoughtId) {
-//       _id
-//       thoughtText
-//       thoughtAuthor
-//       createdAt
-//       comments {
-//         _id
-//         commentText
-//         commentAuthor
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const QUERY_SINGLE_TOURNAMENT = gql`
+  query getSingleTournament($tournamentId: ID!) {
+    tournament(tournamentId: $tournamentId) {
+      _id
+      tournName
+      tournamentHost
+      createdAt
+      playerSize
+      players
+      join
+      full
+    }
+  }
+`;
 
-// export const QUERY_ME = gql`
-//   query me {
-//     me {
-//       _id
-//       username
-//       email
-//       thoughts {
-//         _id
-//         thoughtText
-//         thoughtAuthor
-//         createdAt
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      email
+      tournaments {
+        _id
+        tournName
+        tournamentHost
+        createdAt
+      }
+    }
+  }
+`;
