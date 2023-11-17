@@ -1,0 +1,36 @@
+.navLinks {
+    display: flex;
+}
+
+.navLinks ul li{
+    list-style-type: none;
+    display: inline-flex;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.navLinks ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 120%;
+}
+
+.navLinks ul li a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 540px) {
+    .navLinks ul {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+    }
+
+    .navLinks ul li {
+        list-style-type: none;
+        display: block;
+        text-decoration: none;
+    }
+}
