@@ -1,6 +1,8 @@
+import './Footer.css'
+
 const Footer = () => {
   return (
-    <footer></footer>
+    <footer>this is the footer</footer>
   );
 };
 
