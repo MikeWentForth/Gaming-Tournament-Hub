@@ -2,7 +2,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer>this is the footer</footer>
+    <footer>Gaming Tournement Hub LLC Inc. 2024</footer>
   );
 };
 
