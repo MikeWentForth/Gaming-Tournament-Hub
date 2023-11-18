@@ -1,5 +1,5 @@
-import NavLinks from "../NavLinks"
-import './index.css';
+import NavLinks from "../NavLinks/navlinks"
+import './navigation.css';
 
 function Navigation() {
     return (
