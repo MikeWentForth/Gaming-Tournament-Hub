@@ -1,8 +1,10 @@
+import HomeBody from "../components/HomeBody";
+
 const Home = () => {
 
   return (
     <>
-      <p>This Is The HOMEPAGE</p>
+      <HomeBody />
     </>
   );
 };
