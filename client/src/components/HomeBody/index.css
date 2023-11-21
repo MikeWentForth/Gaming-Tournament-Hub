@@ -1,0 +1,87 @@
+.home-body {
+    padding: 25% 0% 25% 0%;
+    text-align: center;
+    background-image: url('../../assets/HomeBodyBackground.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.body-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    width: 30%;
+    margin-top: -40vh;
+    padding-bottom: 30px;
+    border: 2px solid goldenrod;
+}
+
+.home-buttons {
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 300px;
+}
+
+.home-buttons button:hover {
+    cursor:pointer ;
+}
+
+.home-buttons button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#Host-BTN {
+    background-color: red;
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px red, 0 0 20px red;
+    animation: glowRed 1s infinite alternate;
+    transition: background-color 0.3s ease;
+}
+
+#Join-BTN {
+    background-color: green;
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px green, 0 0 20px green;
+    animation: glowGreen 1s infinite alternate;
+    transition: background-color 0.3s ease;
+}
+
+#Host-BTN:hover {
+    background-color: darkred;
+    transform: scale(1.1);
+}
+
+#Join-BTN:hover {
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+
+.upcoming-events-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    width: 50%;
+    margin-top: 10vh;
+    border: 2px solid goldenrod;
+}
+
+.upcoming-tournaments p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    width: 50%;
+    margin-top: 2vh;
+    padding: 10px;
+    border: 2px solid goldenrod;
+}
