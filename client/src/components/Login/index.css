@@ -11,7 +11,7 @@
 
 .arena-header {
     font-size: 50px; 
-    color: #D4AF37; 
+    color: goldenrod; 
     text-align: center; 
     margin-bottom: -60px; 
     /* affects space below header */
@@ -23,7 +23,7 @@
     /* adds padding around the form */
     border-radius: 10px; 
     /* rounds the corner */
-    box-shadow: 0 4px 8px 0 #D4AF37; 
+    box-shadow: 0 4px 8px 0 goldenrod; 
     /* adds a slight gold shadow */
     width: 80%; 
     max-width: 500px; 
@@ -31,7 +31,7 @@
   }
 
 .card-header {
-    color: #D4AF37;
+    color: goldenrod;
     padding: 10px;
     font-size: 30px;
     text-align: left;
@@ -50,13 +50,13 @@
 .login-btn {
     cursor: pointer;
     background-color: #000000;
-    color: #D4AF37;
+    color: goldenrod;
     margin: 20px auto;
     display: block;
     padding: 15px 30px;
     /* increased padding inside button to make it larger */
     font-size: 18px;
-    border: 2px solid #D4AF37;
+    border: 2px solid goldenrod;
     /* Add border around button */
     border-radius: 5px;
     /* Rounds the corner of the button */
@@ -65,7 +65,7 @@
 }
 
 .login-btn:hover {
-    background-color: #D4AF37;
+    background-color: goldenrod;
     color: #000000;
     border-color: #000000;
 }
@@ -73,7 +73,7 @@
 .error-message {
     margin-top: 10px;
     padding: 10px;
-    background-color: #D4AF37;
+    background-color: goldenrod;
     color: #000000;
     text-align: center;
     font-size: 20px;
@@ -87,7 +87,7 @@
   }
 
   .signUp{
-    color: #D4AF37;
+    color: goldenrod;
     text-decoration: none;
   }
 
