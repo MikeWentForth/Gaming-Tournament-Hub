@@ -25,6 +25,10 @@
     max-width: 300px;
 }
 
+.home-buttons button:hover {
+    cursor:pointer ;
+}
+
 .home-buttons button {
     padding: 10px 20px;
     margin: 5px;
