@@ -92,7 +92,7 @@ const Login = (props) => {
             
           )}
           <div className="signup-link" >
-            You aren't registered <Link className="signUp" to="/signup">Sign Up</Link>
+            Aren't registered? <Link className="signUp" to="/signup">Sign Up</Link>
           </div>
         </div>
       </div>
