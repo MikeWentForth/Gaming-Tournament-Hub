@@ -26,8 +26,8 @@ export const ADD_PLAYER = gql`
 `;
 
 export const ADD_TOURNAMENT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+  mutation addTournament($tournamentName: String!) {
+    addTournament(thoughtText: $thoughtText) {
       _id
       tournName
       tournamentHost

@@ -56,7 +56,7 @@ const resolvers = {
 
                 return tournament;
             }
-            throw AuthenticationError;
+            throw AuthenticationError
             ('Sorry SCRUB but you need to be logged in!');
         },
         removeTournament: async (parent, { tournamentId }, context) => {
