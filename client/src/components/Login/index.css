@@ -1,0 +1,103 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ef740c5a-5c00-4333-8b9b-e16b92b97864/devjh02-6b7cf28f-def3-4c06-9cd3-30dcbf99589a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VmNzQwYzVhLTVjMDAtNDMzMy04YjliLWUxNmI5MmI5Nzg2NFwvZGV2amgwMi02YjdjZjI4Zi1kZWYzLTRjMDYtOWNkMy0zMGRjYmY5OTU4OWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0._kbbGFaopHoo_IPZR5SdTw9AEdDoTo0KGd015DrIbw0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.arena-header {
+    font-size: 50px; 
+    color: goldenrod; 
+    text-align: center; 
+    margin-bottom: -60px; 
+    /* affects space below header */
+  }
+
+.login-card {
+    background-color: #110f0c;
+    padding: 20px; 
+    /* adds padding around the form */
+    border-radius: 10px; 
+    /* rounds the corner */
+    box-shadow: 0 4px 8px 0 goldenrod; 
+    /* adds a slight gold shadow */
+    width: 80%; 
+    max-width: 500px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+.card-header {
+    color: goldenrod;
+    padding: 10px;
+    font-size: 30px;
+    text-align: left;
+    margin-top: 50px;
+    margin-left: -10px;
+    margin-bottom: -5px;
+    /* affects the placement space */
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.login-btn {
+    cursor: pointer;
+    background-color: #000000;
+    color: goldenrod;
+    margin: 20px auto;
+    display: block;
+    padding: 15px 30px;
+    /* increased padding inside button to make it larger */
+    font-size: 18px;
+    border: 2px solid goldenrod;
+    /* Add border around button */
+    border-radius: 5px;
+    /* Rounds the corner of the button */
+    transform: scale(1.00);
+    transition: all 1s ease;
+}
+
+.login-btn:hover {
+    background-color: goldenrod;
+    color: #000000;
+    border-color: #000000;
+}
+
+.error-message {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: goldenrod;
+    color: #000000;
+    text-align: center;
+    font-size: 20px;
+}
+
+.signup-link {
+    color:white;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .signUp{
+    color: goldenrod;
+    text-decoration: none;
+  }
+
+.logo {
+  display: block;
+  width: 90%; 
+  justify-content: center;
+  margin-top: -50px;
+  margin-bottom: -240px;
+  margin-left: 40px;
+}
+
+
