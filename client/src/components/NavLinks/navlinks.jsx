@@ -27,11 +27,6 @@ function NavLinks({ closeHamburger, isMobile }) {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to='/signUp' onClick={closeHamburgerMenu}>
-                        Sign Up
-                    </NavLink>
-                </li>
-                <li>
                     <NavLink to='/profile' onClick={closeHamburgerMenu}>
                         Profile
                     </NavLink>
