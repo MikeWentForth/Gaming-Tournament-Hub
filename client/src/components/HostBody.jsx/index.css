@@ -1,0 +1,81 @@
+.host-background {
+    padding: 25% 0% 25% 0%;
+    text-align: center;
+    background-image: url('../../assets/HomeBodyBackground.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.searchBar {
+    margin-top: -40vh;
+}
+
+input {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+}
+
+.suggestions {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+    position: absolute;
+    width: 300px;
+    top: calc(100% + -400px);
+    text-align: center;
+}
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.suggestions li:hover {
+    background-color: #333;
+}
+
+/* .tournament-size-slider {
+
+} */
+
+.tournament-size-slider.suggestions-visible {
+    margin-top: 150px;
+}
+
+.tournament-name {
+    margin-top: 20px;
+}
+
+.generate-tournament-btn button{
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: goldenrod;
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px goldenrod, 0 0 20px goldenrod;
+    animation: glowGoldenrod 1s infinite alternate;
+    transition: background-color 0.3s ease;
+}
+
+.generate-tournament-btn button:hover {
+    cursor: pointer;
+    background-color: rgb(141, 107, 22);
+    transform: scale(1.1);
+}

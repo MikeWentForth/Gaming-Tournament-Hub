@@ -7,7 +7,9 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AboutUs from './pages/AboutUs.jsx';
 import Profile from './pages/Profile.jsx';
-import ErrorPage from './pages/ErrorPage';
+import ErrorPage from './pages/ErrorPage.jsx';
+import HostPage from './pages/HostPage.jsx';
+import JoinPage from './pages/JoinPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
       }, {
         path: '/profile',
         element: <Profile />
+      },
+      {
+        path: '/host',
+        element: <HostPage />
+      },
+      {
+        path: '/join',
+        element: <JoinPage />
       }
     ]
   },
