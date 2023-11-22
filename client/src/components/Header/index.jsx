@@ -1,6 +1,6 @@
 
-import Navigation from "../Navigation/Navigation";
-import './header.css'
+import Navigation from "../Navigation";
+import './index.css'
 
 const Header = () => {
   return (

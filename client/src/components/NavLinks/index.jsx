@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './navlinks.css'
+import './index.css'
 
 function NavLinks({ closeHamburger, isMobile }) {
 
