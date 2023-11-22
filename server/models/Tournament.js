@@ -1,10 +1,10 @@
-const { Schema, model } = require('mongoose');
-const dateFormat = require('../utils/auth');
+const { Schema, model } = require("mongoose");
+const dateFormat = require("../utils/dateFormat");
 
 const tournamentSchema = new Schema({
   tournName: {
     type: String,
-    required: 'You joined this many tournaments',
+    required: true,
     minlength: 1,
     maxlength: 280,
     trim: true,
@@ -30,6 +30,6 @@ const tournamentSchema = new Schema({
     get: (timestamp) => dateFormat(timestamp),
   },
 });
+const Tournament = model("Tournament", tournamentSchema);
 
-
-module.exports = tournamentSchema;
+module.exports = Tournament;

@@ -1,4 +1,5 @@
 const Player = require('./Player');
-const tournamentSchema = require('./Tournament');
+const Tournament = require('./Tournament')
 
-module.exports = { Player, tournamentSchema};
+
+module.exports = { Player, Tournament};
