@@ -20,7 +20,10 @@ const playerSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  tournaments: [Tournament.schema],
+  tournaments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Tournament',
+  },],
 });
 
 playerSchema.pre('save', async function (next) {
