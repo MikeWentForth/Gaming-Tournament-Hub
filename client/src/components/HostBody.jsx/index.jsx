@@ -54,45 +54,47 @@ function HostBody() {
     }, []);
     return (
         <div className='host-background'>
-            <div className='searchBar'>
-                <input
-                    type='text'
-                    placeholder='Search for a game...'
-                    value={searchValue}
-                    onChange={handleSearchChange}
-                />
-                {suggestions.length > 0 && (
-                    <ul className='suggestions'>
-                        {suggestions.map((game, index) => (
-                            <li key={index} onClick={() => handleSuggestionClick(game)}>
-                                {game}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
-            <div className={`tournament-size-slider ${suggestionsVisible ? 'suggestions-visible' : ''}`}>
-                <h2>Tournament Size Slider</h2>
-                <input
-                    type="range"
-                    min="4"
-                    max="16"
-                    value={sliderValue}
-                    onChange={handleSliderChange}
-                />
-                <p>Number of Players: {sliderValue}</p>
-            </div>
-            <div className='tournament-name'>
-                <input 
-                    type="text"
-                    placeholder='Enter tournament name...'
-                    value={tournamentName}
-                    onChange={handleTournamentNameChange} 
-                />
-            </div>
-            <div className='generate-tournament-btn'>
-                <button>Generate Tournament</button>
-            </div>
+            <form className='flex-row justify-center justify-space-between-md align-center'>
+                <div className='searchBar'>
+                    <input
+                        type='text'
+                        placeholder='Search for a game...'
+                        value={searchValue}
+                        onChange={handleSearchChange}
+                    />
+                    {suggestions.length > 0 && (
+                        <ul className='suggestions'>
+                            {suggestions.map((game, index) => (
+                                <li key={index} onClick={() => handleSuggestionClick(game)}>
+                                    {game}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </div>
+                <div className={`tournament-size-slider ${suggestionsVisible ? 'suggestions-visible' : ''}`}>
+                    <h2>Tournament Size Slider</h2>
+                    <input
+                        type="range"
+                        min="4"
+                        max="16"
+                        value={sliderValue}
+                        onChange={handleSliderChange}
+                    />
+                    <p>Number of Players: {sliderValue}</p>
+                </div>
+                <div className='tournament-name'>
+                    <input 
+                        type="text"
+                        placeholder='Enter tournament name...'
+                        value={tournamentName}
+                        onChange={handleTournamentNameChange} 
+                    />
+                </div>
+                <div className='generate-tournament-btn'>
+                    <button>Generate Tournament</button>
+                </div>
+            </form>
         </div>
     )
 }
