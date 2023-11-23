@@ -32,7 +32,7 @@ function NavLinks({ closeHamburger, isMobile }) {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink onClick={logout}>
+                            <NavLink onClick={logout} className="logout">
                                 Logout
                             </NavLink>
                         </li>
@@ -40,7 +40,7 @@ function NavLinks({ closeHamburger, isMobile }) {
                     
                 ) : (
                     <li>
-                    <NavLink to='/login' onClick={closeHamburgerMenu}>
+                    <NavLink to='/login' onClick={closeHamburgerMenu} className="login">
                         Login
                     </NavLink>
                     </li>
