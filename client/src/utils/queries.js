@@ -15,7 +15,7 @@ export const QUERY_PLAYER = gql`
   }
 `;
 
-export const QUERY_TOURNMENTS = gql`
+export const QUERY_TOURNAMENTS = gql`
   query getTournaments {
     tournaments {
       _id

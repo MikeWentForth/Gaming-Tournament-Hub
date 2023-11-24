@@ -9,6 +9,10 @@ const tournamentSchema = new Schema({
     maxlength: 280,
     trim: true,
   },
+  gameName: {
+    type: String,
+    required: true
+  },
   playerSize: {
     type: Number,
     required: true,

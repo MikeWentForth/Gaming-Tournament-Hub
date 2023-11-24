@@ -24,11 +24,12 @@ function HostBody() {
       const { data } = await addTournament({
         variables: {
           tournamentName,
-          thoughtAuthor: Auth.getProfile().data.username,
+          gameName: searchValue,
+          playerSize: sliderValue,
+          tournamentHost: Auth.getProfile().data.username,
         },
       });
 
-      setThoughtText("");
     } catch (err) {
       console.error(err);
     }
@@ -73,19 +74,19 @@ function HostBody() {
     setSuggestionsVisible(false);
   };
 
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (inputRef.current && !inputRef.current.contains(e.target)) {
-        setSuggestions([]);
-      }
-    };
+//   useEffect(() => {
+//     const handleOutsideClick = (e) => {
+//       if (inputRef.current && !inputRef.current.contains(e.target)) {
+//         setSuggestions([]);
+//       }
+//     };
 
-    document.addEventListener("click", handleOutsideClick);
+//     document.addEventListener("click", handleOutsideClick);
 
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, []);
+//     return () => {
+//       document.removeEventListener("click", handleOutsideClick);
+//     };
+//   }, []);
   return (
     <div className="host-background">
       <form
