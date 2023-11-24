@@ -1,8 +1,12 @@
 [
     {
-      "username": "Javier Burgara",
-      "email": "javierburgara150@yahoo.com",
+      "username": "javier",
+      "email": "test1@yahoo.com",
       "password": "password01"
+    },
+    {
+      "username": "justin",
+      "email": "test2@yahoo.com",
+      "password": "password02"
     }
-    
   ]

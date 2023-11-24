@@ -19,9 +19,11 @@ const tournamentSchema = new Schema({
   },
   join: {
     type: Boolean,
+    default: true
   },
   full: {
     type: Boolean,
+    default: false
   },
   tournamentHost: {
     type: String,
