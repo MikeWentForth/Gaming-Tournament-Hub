@@ -1,4 +1,4 @@
-const  tournamentSchema  = require('./Tournament')
+const  Tournament  = require('./Tournament')
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
@@ -20,7 +20,7 @@ const playerSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  tournaments: [tournamentSchema],
+  tournaments: [Tournament.schema],
 });
 
 playerSchema.pre('save', async function (next) {
