@@ -1,4 +1,4 @@
-import NavLinks from "../NavLinks"
+import NavLinks from "../NavLinks/index"
 import './index.css';
 
 function Navigation() {

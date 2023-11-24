@@ -42,13 +42,14 @@ const resolvers = {
             const token = signToken(player);
             return { token, player };
         },
-        addTournament: async (parent, { tournamentName, playerSize }, context) => {
+        addTournament: async (parent, { tournamentName, gameName, playerSize }, context) => {
             if (context.user) {
                 console.log(context.user);
                 const tournament = await Tournament.create({
                     tournName: tournamentName,
+                    gameName: gameName,
+                    playerSize,
                     tournamentHost: context.user.username,
-                    playerSize
                 });
 
                 await Player.findOneAndUpdate(

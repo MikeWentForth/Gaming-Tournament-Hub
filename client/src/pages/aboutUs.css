@@ -1,0 +1,27 @@
+.about-us-info {
+  width: 60%;
+};
+
+.about-us-info h3 {
+  color: green;
+  border-bottom: 1px solid white;
+}
+
+.about-us-info p {
+  margin-bottom: 10px;
+}
+
+.about-us-info h1 {
+  width: 60%;
+  padding: 20px 0;
+}
+
+
+.h3-underline {
+  color: gold;
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+};
+
+
+

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.css'
 
 function HomeBody () {
@@ -6,8 +7,13 @@ function HomeBody () {
         <div className='body-modal'>
             <h1>TOURNAMENT HUB</h1>
             <div className='home-buttons'>
-                <button id='Host-BTN'>Host</button>
-                <button id='Join-BTN'>Join</button>     
+                <Link to="/host">
+                    <button id='Host-BTN'>Host</button>
+                </Link>
+                <Link to="/join">
+                    <button id='Join-BTN'>Join</button>
+                </Link>
+                
             </div>
         </div>
 
