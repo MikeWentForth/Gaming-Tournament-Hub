@@ -8,7 +8,7 @@ db.once('open', async () => {
   try {
     await cleanDB('Tournament', 'tournaments');
 
-    await cleanDB('Player', 'Players');
+    await cleanDB('Player', 'players');
 
     await Player.create(playersSeeds);
 
@@ -22,6 +22,7 @@ db.once('open', async () => {
           },
         }
       );
+      console.log(player);
     }
   } catch (err) {
     console.error(err);

@@ -1,15 +1,13 @@
 [
     {
-      "tournamentHost": "",
-      "tournName": "",
-      "playerSize":"",
-      "players":""
+      "tournName": "League of Legends",
+      "playerSize": 10,
+      "tournamentHost": "javier"
     },
     {
-        "tournamentHost": "",
-        "tournName": "",
-        "playerSize":"",
-        "players":""
+      "tournName": "Valorant",
+      "playerSize": 10,
+      "tournamentHost": "justin"
     }
   ]
   
