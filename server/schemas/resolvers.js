@@ -54,7 +54,7 @@ const resolvers = {
 
                 await Player.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { tournament: tournament._id } }
+                    { $addToSet: { tournaments: tournament._id } }
                 );
 
                 return tournament;
