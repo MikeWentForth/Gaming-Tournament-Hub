@@ -50,7 +50,7 @@ const Login = (props) => {
     <div className="login-container">
       <div className="card login-card">
         <h1 className='arena-header'>Let The Games Begin</h1>
-        <img src="/public/Placeholder2.png" alt="GenericShooterGirl" className="logo" />
+        <img src="/Placeholder2.png" alt="GenericShooterGirl" className="logo" />
         <h2 className="card-header">Login</h2>
         <div className="card-body">
           {data ? (
