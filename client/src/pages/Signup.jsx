@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../components/Signup/index.css';
-
 import { useMutation } from '@apollo/client';
 import { ADD_PLAYER } from '../utils/mutations';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 import Auth from '../utils/auth';
 
@@ -44,12 +44,13 @@ const Signup = () => {
   };
 
   return (
+    <motion.div initial={{ opacity: 0, x:-300 }} animate={{ opacity: 1, x:0 }} exit={{ opacity: 0, x:300 }} transition={{ duration: 1.5 }}>
     <main className="signup-container">
       <div className="card signup-card">
-      <img src="/public/tournhub.png" alt="GenericIcon" className="signup-logo" />
+      <img src="/tournhub.png" alt="GenericIcon" className="signup-logo" />
       <h1 className='title-header'>This Is Where Legends Are Made</h1>
         <div className="signup-header">
-          <h4 className="card-header">Sign Up</h4>
+          <h4 className="signup-card-header">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -94,7 +95,7 @@ const Signup = () => {
 
             {error && (
               <div className="signup-error">
-                {error.message}
+                Woah there champ, there was an error
               </div>
             )}
             <div className="login-link" >
@@ -105,6 +106,7 @@ const Signup = () => {
         <ToastContainer newestOnTop theme="dark" className="my-toast-container" />
       </div>
     </main>
+    </motion.div>
   );
 };
 

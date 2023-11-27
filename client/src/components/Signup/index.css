@@ -6,6 +6,7 @@
     background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ef740c5a-5c00-4333-8b9b-e16b92b97864/ddxw7hn-627f05c5-88bf-4f4e-8a66-50d4a83cc2d8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VmNzQwYzVhLTVjMDAtNDMzMy04YjliLWUxNmI5MmI5Nzg2NFwvZGR4dzdobi02MjdmMDVjNS04OGJmLTRmNGUtOGE2Ni01MGQ0YTgzY2MyZDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.jq8KAn6LrKGJb3I85DBvFjjV_vZv2pFjpO0cVHBpWwg');
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 .signup-card {
@@ -103,4 +104,15 @@
   justify-content: center;
   margin-top: 10px;
   margin-bottom: -40px;
+}
+
+.signup-card-header {
+  color: goldenrod;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: -10px;
+  margin-bottom: -5px;
+  /* affects the placement space */
 }
