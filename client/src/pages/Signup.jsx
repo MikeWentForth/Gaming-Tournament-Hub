@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import '../components/Signup/index.css';
 
 import { useMutation } from '@apollo/client';
 import { ADD_PLAYER } from '../utils/mutations';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 import Auth from '../utils/auth';
 
@@ -35,14 +39,17 @@ const Signup = () => {
       Auth.login(data.addPlayer.token);
     } catch (e) {
       console.error(e);
+      toast.error('Woah there hotshot, seems like there is something wrong with your signup information.')
     }
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+    <main className="signup-container">
+      <div className="card signup-card">
+      <img src="/public/tournhub.png" alt="GenericIcon" className="signup-logo" />
+      <h1 className='title-header'>This Is Where Legends Are Made</h1>
+        <div className="signup-header">
+          <h4 className="card-header">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -52,46 +59,50 @@ const Signup = () => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="username"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
+                  className="signup-form-input"
+                  placeholder="Email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
-                  placeholder="******"
+                  className="signup-form-input"
+                  placeholder="Username"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <input
+                  className="signup-form-input"
+                  placeholder="***********"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block btn-primary signup-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
-                  Submit
+                  Lets Roll
                 </button>
               </form>
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="signup-error">
                 {error.message}
               </div>
             )}
+            <div className="login-link" >
+            Already registered? <Link className="logIn" to="/login">Login here</Link>
+          </div>
           </div>
         </div>
+        <ToastContainer newestOnTop theme="dark" className="my-toast-container" />
       </div>
     </main>
   );
