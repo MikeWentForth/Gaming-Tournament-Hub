@@ -1,10 +1,11 @@
+import JoinBody from "../components/JoinBody";
 
 
 const JoinPage = () => {
 
     return (
       <>
-        <p>This is the Join Page</p>
+        <JoinBody />
       </>
     );
   };
