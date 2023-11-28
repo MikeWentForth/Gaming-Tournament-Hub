@@ -10,6 +10,7 @@ import Profile from './pages/Profile.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
 import HostPage from './pages/HostPage.jsx';
 import JoinPage from './pages/JoinPage.jsx';
+import Tournament from './pages/JoinTournament.jsx';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
       {
         path: '/join',
         element: <JoinPage />
+      },
+      {
+        path:'/join/tournaments/:id',
+        element:<Tournament/>
       }
     ]
   },

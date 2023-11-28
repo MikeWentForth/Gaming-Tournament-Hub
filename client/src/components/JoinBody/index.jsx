@@ -1,11 +1,14 @@
 import './index.css'
 import React, { useState } from 'react';
 import TournamentResult from '../TournamentInfo';
+import { useQuery } from '@apollo/client';
+import { QUERY_TOURNAMENTS } from '../../utils/queries';
 
 function JoinBody() {
 
     const [tournamentResults, setTournamentResults] = useState([]); // State to store search results
 
+    const {loading,data} = useQuery(QUERY_TOURNAMENTS,)
     // Dummy data for demonstration
     const dummyResults = [
         { id: 1, tournamentName: 'Tournament 1', game: 'Valorant' },
