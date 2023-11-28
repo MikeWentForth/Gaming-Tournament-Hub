@@ -1,12 +1,13 @@
-import React from 'react';
-import './index.css'
+/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 
-function TournamentResult({ tournamentName, game, onViewClick }) {
+function TournamentResult({tournamentId, tournamentName, game, onViewClick }) {
+  console.log(`THis is the KEY::: ${tournamentId}`);
   return (
-    <div className="tournament-result">
+    <div>
       <h3>{tournamentName}</h3>
       <p>Game: {game}</p>
-      <button onClick={onViewClick}>View</button>
+      <Link to={`/tournaments/${tournamentId}`}><button onClick={onViewClick}>View</button></Link>
     </div>
   );
 }

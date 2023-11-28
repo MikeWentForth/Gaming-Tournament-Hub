@@ -9,6 +9,7 @@ export const QUERY_TOURNAMENTS = gql`
       join
       full
       createdAt
+      _id
     }
   }
 `;
