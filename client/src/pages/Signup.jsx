@@ -44,7 +44,7 @@ const Signup = () => {
   };
 
   return (
-    <motion.div initial={{ opacity: 0, x:-300 }} animate={{ opacity: 1, x:0 }} exit={{ opacity: 0, x:300 }} transition={{ duration: 1.5 }}>
+    <motion.div initial={{ opacity: 0, x:-300 }} animate={{ opacity: 1, x:0 }} exit={{ opacity: 0, x:300 }} transition={{ duration: 1.0 }}>
     <main className="signup-container">
       <div className="card signup-card">
       <img src="/tournhub.png" alt="GenericIcon" className="signup-logo" />
