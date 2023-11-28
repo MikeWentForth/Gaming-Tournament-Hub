@@ -40,3 +40,17 @@ export const ADD_TOURNAMENT = gql`
   }
 `;
 
+export const REMOVE_TOURNAMENT = gql`
+  mutation removeTournament($tournamentId: ID!) {
+    removeTournament(tournamentId: $tournamentId) {
+      _id
+      tournName
+      playerSize
+      join
+      full
+      tournamentHost
+      createdAt
+    }
+  }
+`;
+

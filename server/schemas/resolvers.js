@@ -1,24 +1,26 @@
-const { Player, Tournament } = require('../models');
+const { Player, Tournament, TournamentPlayers } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
     Query: {
         players: async () => {
-            return Player.find().populate('tournaments')
+            return Player.find();
         },
         player: async (parent, { username }) => {
-            return Player.findOne({ username }).populate('tournaments');
+            return Player.findOne({ username });
+        },
+        tournaments: async (parent, { username }) => {
+            return Player.findOne({ username }).populate('hostedTournaments').populate('joinedTournaments');
         },
         tournament: async (parent, { tournamentId }) => {
             return Tournament.findOne({ _id: tournamentId });
         },
-        tournaments: async (parent, { username }) => {
-            const params = username ? { username } : {};
-            return Tournament.find(params).sort({ createdAt: -1 });
+        tournamentPlayers: async (parent, { tournamentId }) => {
+            return TournamentPlayers.findOne({ _id: tournamentId });
         },
         me: async (parent, args, context) => {
             if (context.user) {
-                return Player.findOne({ _id: context.user._id }).populate('tournaments');
+                return Player.findOne({ _id: context.user._id }).populate('hostedTournaments').populate('joinedTournaments');
             }
             throw AuthenticationError;
         },
@@ -44,41 +46,50 @@ const resolvers = {
         },
         addTournament: async (parent, { tournamentName, gameName, playerSize }, context) => {
             if (context.user) {
-                console.log(context.user);
+                console.log("logged in user: ", context.user);
                 const tournament = await Tournament.create({
                     tournName: tournamentName,
                     gameName: gameName,
                     playerSize,
+                });
+                console.log("created tourn: ", tournament);
+
+                // update player's hostedTournaments
+                const player = await Player.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { hostedTournaments: tournament._id } }
+                )
+                console.log("adding to player: ", player);
+
+                // update tournament's host
+                const tournamentPlayers = await TournamentPlayers.create({
+                    _id: tournament._id,
+                    tournamentHost: context.user._id,
+                });
+                console.log("adding to tournament: ", tournamentPlayers);
+
+                return tournament;
+            }
+            throw AuthenticationError;
+        },
+        removeTournament: async (parent, { tournamentId }, context) => {
+            if (context.user) {
+                const tournament = await Tournament.findOneAndDelete({
+                    _id: tournamentId,
                     tournamentHost: context.user.username,
                 });
 
                 await Player.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $addToSet: { tournament: tournament._id } }
+                    { $pull: { tournaments: tournament._id } },
+                    { new: true }
                 );
 
                 return tournament;
             }
-            throw AuthenticationError
-            ('Sorry SCRUB but you need to be logged in!');
-        },
-        removeTournament: async (parent, { tournamentId }, context) => {
-            if (context.user) {
-              const tournament = await Tournament.findOneAndDelete({
-                _id: tournamentId,
-                tournamentHost: context.user.username,
-              });
-      
-              await Player.findOneAndUpdate(
-                { _id: context.user._id },
-                { $pull: { tournament: tournament._id } }
-              );
-      
-              return tournament;
-            }
             throw AuthenticationError;
-          },
-          
+        },
+
     }
 }
 

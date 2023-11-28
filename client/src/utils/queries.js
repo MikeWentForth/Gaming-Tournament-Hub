@@ -1,30 +1,25 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_PLAYER = gql`
-  query user($username: String!) {
-    user(username: $username) {
+export const QUERY_TOURNAMENTS = gql`
+  query tournaments($username: String!) {
+    tournaments(username: $username) {
       _id
       username
       email
-      tournaments {
+      hostedTournaments {
         _id
         tournName
+        gameName
+        playerSize
         createdAt
       }
-    }
-  }
-`;
-
-export const QUERY_TOURNAMENTS = gql`
-  query getTournaments {
-    tournaments {
-      _id
-      tournName
-      tournamentHost
-      createdAt
-      playerSize
-      join
-      full
+      joinedTournaments {
+        _id
+        tournName
+        gameName
+        playerSize
+        createdAt
+      }
     }
   }
 `;
@@ -49,10 +44,18 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      tournaments {
+      hostedTournaments {
         _id
         tournName
-        tournamentHost
+        gameName
+        playerSize
+        createdAt
+      }
+      joinedTournaments {
+        _id
+        tournName
+        gameName
+        playerSize
         createdAt
       }
     }
