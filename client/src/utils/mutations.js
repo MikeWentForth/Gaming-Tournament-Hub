@@ -21,6 +21,7 @@ export const ADD_PLAYER = gql`
         password
         username
       }
+      token
     }
   }
 `;

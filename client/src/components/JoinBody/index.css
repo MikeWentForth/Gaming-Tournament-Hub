@@ -1,0 +1,27 @@
+.join-background {
+    padding: 25% 0% 25% 0%;
+    text-align: center;
+    background-image: url('../../assets/HomeBodyBackground.jpg');
+    background-size: cover;
+    height: 100%;
+}
+
+.tournamentId-search input,
+.tournamentId-search button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tournamentId-search button {
+    background-color: goldenrod;
+    color: #fff;
+    cursor: pointer;
+    /* Additional styles as needed */
+}
+
+.tournamentId-search button:hover{
+    background-color: rgb(141, 107, 22);
+    transform: scale(1.1);
+}

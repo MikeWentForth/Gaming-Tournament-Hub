@@ -1,4 +1,4 @@
-import HostBody from "../components/HostBody.jsx";
+import HostBody from "../components/HostBody/index.jsx";
 
 const HostPage = () => {
 
