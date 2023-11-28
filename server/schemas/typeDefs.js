@@ -1,14 +1,12 @@
 const typeDefs = `
     type Tournament {
-            _id: ID
-            tournName: String
-            playerSize: Int
-            join: Boolean
-            full: Boolean
-            tournamentHost: String
-            createdAt: String 
-
-       
+        _id: ID
+        tournName: String
+        gameName: String
+        playerSize: Int
+        join: Boolean
+        full: Boolean
+        createdAt: String 
     }
 
     type Player {
@@ -16,19 +14,30 @@ const typeDefs = `
         username: String
         email: String
         password: String
-        tournaments: [Tournament]!    
+        hostedTournaments: [Tournament]
+        joinedTournaments: [Tournament]
+    }
+
+    type TournamentPlayers {
+        _id: ID
+        tournament: Tournament
+        tournamentHost: Player
+        tournamentPlayers: [Player]
     }
 
     type Auth {
         token: ID!
         player: Player
-      }
+    }
     
     type Query {
         tournament(tournamentId: ID): Tournament
-        tournaments:[Tournament]
+        tournaments(username: String!): [Tournament]
+        tournamentPlayers(tournamentId: ID): TournamentPlayers
         player(username: String!): Player
         players:[Player]
+        hostedTournaments(username: String): [Tournament]
+        joinedTournaments(username: String): [Tournament]
         me: Player
     }
 
