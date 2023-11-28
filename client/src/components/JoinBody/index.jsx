@@ -15,6 +15,7 @@ function JoinBody() {
         { id: 2, tournamentName: 'Tournament 2', game: 'League of Legends' },
         // Add more dummy data as needed
     ];
+    console.log(data)
 
     const handleSearch = () => {
         // Implement your search logic here
