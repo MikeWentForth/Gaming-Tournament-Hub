@@ -46,7 +46,7 @@ const Signup = () => {
   return (
     <motion.div initial={{ opacity: 0, x:-300 }} animate={{ opacity: 1, x:0 }} exit={{ opacity: 0, x:300 }} transition={{ duration: 1.0 }}>
     <main className="signup-container">
-      <div className="card signup-card">
+      <div className="signup-card">
       <img src="/tournhub.png" alt="GenericIcon" className="signup-logo" />
       <h1 className='title-header'>This Is Where Legends Are Made</h1>
         <div className="signup-header">

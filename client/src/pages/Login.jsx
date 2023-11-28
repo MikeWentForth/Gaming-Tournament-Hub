@@ -50,7 +50,7 @@ const Login = (props) => {
   return (
     <motion.div initial={{ opacity: 0, x:300 }} animate={{ opacity: 1, x:0 }} exit={{ opacity: 0, x:-300 }} transition={{ duration: 1.0 }}>
     <div className="login-container">
-      <div className="card login-card">
+      <div className="login-card">
         <h1 className='arena-header'>Let The Games Begin</h1>
         <img src="/Placeholder2.png" alt="GenericShooterGirl" className="logo" />
         <h2 className="card-header">Login</h2>
