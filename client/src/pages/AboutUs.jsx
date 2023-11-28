@@ -9,7 +9,7 @@ const AboutUs = () => {
         <h3 className="h3-underline">Justin</h3>
         <p>My name is Justin...<a href= "https://github.com/CJFeagin33">Click here</a> to see my Github portfolio. </p>
         <h3 className="h3-underline">Mike</h3>
-        <p>My name is Mike Wallace. I'm a full stack web developer that specializes on front end web applications. Please contact me at themikewallace@gmail.com for any web design needs. Also please <a href="https://github.com/MikeWentForth">Click here</a>to see my Github portfolio. </p>
+        <p>My name is Mike Wallace. Im a full stack web developer that specializes on front end web applications. Please contact me at themikewallace@gmail.com for any web design needs. Also, please <a href="https://github.com/MikeWentForth">Click here</a> to see my Github portfolio. </p>
         <h3 className="h3-underline">Matthew</h3>
         <p>My name is Matthew...<a href="https://github.com/matthkang">Click here</a> to see my Github portfolio. </p>
         <h3 className="h3-underline">Phillip</h3>
