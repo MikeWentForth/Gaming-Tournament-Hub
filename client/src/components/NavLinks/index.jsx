@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { NavLink } from "react-router-dom";
 import "./index.css";
+import { motion } from 'framer-motion';
 
 import Auth from "../../utils/auth";
 
@@ -15,13 +16,16 @@ function NavLinks({ closeHamburger, isMobile }) {
       closeHamburger();
     }
   }
+
   return (
     <nav className="navLinks">
       <ul>
         <li>
+        <motion.div initial={{ opacity: 0, x: '-100vw' }} animate={{ opacity: 1, x: 0, transition: { duration: 1.5 } }}>
           <NavLink to="/aboutUs" onClick={closeHamburgerMenu}>
             About Us
           </NavLink>
+          </motion.div>
         </li>
         {Auth.loggedIn() ? (
           <>
@@ -39,6 +43,7 @@ function NavLinks({ closeHamburger, isMobile }) {
         ) : (
           <>
             <li>
+            <motion.div initial={{ opacity: 0, y: '-100vw' }} animate={{ opacity: 1, y: 0, transition: { duration: 1.5 } }}>
               <NavLink
                 to="/signup"
                 onClick={closeHamburgerMenu}
@@ -46,8 +51,10 @@ function NavLinks({ closeHamburger, isMobile }) {
               >
                 Signup
               </NavLink>
+              </motion.div>
             </li>
             <li>
+            <motion.div initial={{ opacity: 0, x: '100vw' }} animate={{ opacity: 1, x: 0, transition: { duration: 1.5 } }}>
               <NavLink
                 to="/login"
                 onClick={closeHamburgerMenu}
@@ -55,6 +62,7 @@ function NavLinks({ closeHamburger, isMobile }) {
               >
                 Login
               </NavLink>
+              </motion.div>
             </li>
           </>
         )}

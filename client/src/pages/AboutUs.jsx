@@ -1,9 +1,11 @@
 import './aboutUs.css'
+import { motion } from 'framer-motion';
 
 const AboutUs = () => {
 
     return (
       <>
+        <motion.section initial={{ opacity: 0, scale: 0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.5 }}>
       <section className="about-us-info">
       <h1>More information about us...</h1>
         <h3 className="h3-underline">Justin</h3>
@@ -17,7 +19,7 @@ const AboutUs = () => {
         <h3 className="h3-underline">Javier</h3>
         <p>My name is Javier...<a href="https://github.com/JavierBurgara">Click here</a> to see my Github portfolio. </p>
       </section>
-     
+      </motion.section>
       </>
     );
   };
