@@ -25,11 +25,6 @@ const tournamentSchema = new Schema({
     type: Boolean,
     default: false
   },
-  tournamentHost: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   createdAt: {
     type: Date,
     default: Date.now,

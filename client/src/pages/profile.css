@@ -1,0 +1,43 @@
+.root {
+  background-color: black;
+}
+
+.title {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  border: 1px solid goldenrod;
+  margin-bottom: 1rem;
+  width: 50%;
+}
+  
+.card .card-header {
+  padding: 0.375rem;
+  background-color: goldenrod;
+  color: black;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+}
+
+.card .card-body {
+  padding: 0.375rem;
+  background: white;
+  color: black;
+}
+
+.card .card-footer {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.375rem;
+}
+
+.card.card-rounded {
+  border-radius: 0.3rem;
+}
+
+.card.card-rounded .card-header {
+  border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+}

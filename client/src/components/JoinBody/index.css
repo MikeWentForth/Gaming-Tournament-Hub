@@ -15,8 +15,13 @@
 }
 
 .tournamentId-search button {
-    background-color: #007bff;
+    background-color: goldenrod;
     color: #fff;
     cursor: pointer;
     /* Additional styles as needed */
+}
+
+.tournamentId-search button:hover{
+    background-color: rgb(141, 107, 22);
+    transform: scale(1.1);
 }

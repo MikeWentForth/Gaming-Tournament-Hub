@@ -20,7 +20,11 @@ const playerSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  tournaments: [{
+  hostedTournaments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Tournament',
+  },],
+  joinedTournaments: [{
     type: Schema.Types.ObjectId,
     ref: 'Tournament',
   },],
