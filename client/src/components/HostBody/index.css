@@ -24,19 +24,19 @@ input {
 
 .suggestions {
     position: absolute;
-    top: calc(100% + 5px);
+    /* top: calc(100% + 5px); */
     left: 50%;
     transform: translateX(-50%);
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    /* padding: 0;
+    margin: 0; */
     border: 1px solid #000;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #000;
     position: absolute;
     width: 300px;
-    top: calc(100% + -400px);
+    /* top: calc(100% + -400px); */
     text-align: center;
 }
 

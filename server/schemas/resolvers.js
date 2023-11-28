@@ -42,10 +42,13 @@ const resolvers = {
             const token = signToken(player);
             return { token, player };
         },
-        addTournament: async (parent, { tournName }, context) => {
+        addTournament: async (parent, { tournamentName, gameName, playerSize }, context) => {
             if (context.user) {
+                console.log(context.user);
                 const tournament = await Tournament.create({
-                    tournName,
+                    tournName: tournamentName,
+                    gameName: gameName,
+                    playerSize,
                     tournamentHost: context.user.username,
                 });
 
@@ -56,8 +59,6 @@ const resolvers = {
 
                 return tournament;
             }
-            throw AuthenticationError;
-            ('Sorry SCRUB but you need to be logged in!');
         },
         removeTournament: async (parent, { tournamentId }, context) => {
             if (context.user) {

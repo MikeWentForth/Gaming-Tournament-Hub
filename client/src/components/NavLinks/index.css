@@ -21,6 +21,14 @@
     transform: scale(1.1);
 }
 
+.login {
+    color: #2699FB !important;
+}
+
+.logout {
+    color: #ff0000 !important;
+}
+
 @media screen and (max-width: 540px) {
     .navLinks ul {
         position: absolute;
