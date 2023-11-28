@@ -32,7 +32,8 @@ const typeDefs = `
     
     type Query {
         tournament(tournamentId: ID): Tournament
-        tournaments(username: String!): [Tournament]
+        tournaments: [Tournament]
+        userTournaments(username: String!): [Tournament]
         tournamentPlayers(tournamentId: ID): TournamentPlayers
         player(username: String!): Player
         players:[Player]

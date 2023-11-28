@@ -9,11 +9,14 @@ const resolvers = {
         player: async (parent, { username }) => {
             return Player.findOne({ username });
         },
-        tournaments: async (parent, { username }) => {
+        userTournaments: async (parent, { username }) => {
             return Player.findOne({ username }).populate('hostedTournaments').populate('joinedTournaments');
         },
         tournament: async (parent, { tournamentId }) => {
             return Tournament.findOne({ _id: tournamentId });
+        },
+        tournaments: async () => {
+            return Tournament.find();
         },
         tournamentPlayers: async (parent, { tournamentId }) => {
             return TournamentPlayers.findOne({ _id: tournamentId });

@@ -1,15 +1,15 @@
-import ReactDOM from 'react-dom/client';
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from './App.jsx';
-import Home from './pages/Home';
-import Signup from './pages/Signup';
-import Login from './pages/Login';
-import AboutUs from './pages/AboutUs.jsx';
-import Profile from './pages/Profile.jsx';
-import ErrorPage from './pages/ErrorPage.jsx';
-import HostPage from './pages/HostPage.jsx';
-import JoinPage from './pages/JoinPage.jsx';
+import App from "./App.jsx";
+import Home from "./pages/Home";
+import Signup from "./pages/Signup";
+import Login from "./pages/Login";
+import AboutUs from "./pages/AboutUs.jsx";
+import Profile from "./pages/Profile.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
+import HostPage from "./pages/HostPage.jsx";
+import JoinPage from "./pages/JoinPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,38 +18,41 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
-        element: <Home />
-      }, {
-        path: '/login',
-        element: <Login />
-      }, {
-        path: '/signup',
-        element: <Signup />
-      }, {
-        path: '/aboutUs',
-        element: <AboutUs />
-      }, {
-        path: '/profile/:username',
-        element: <Profile />
+        path: "/",
+        element: <Home />,
       },
       {
-        path: '/me',
-        element: <Profile />
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: '/host',
-        element: <HostPage />
+        path: "/signup",
+        element: <Signup />,
       },
       {
-        path: '/join',
-        element: <JoinPage />
-      }
-    ]
+        path: "/aboutUs",
+        element: <AboutUs />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/me",
+        element: <Profile />,
+      },
+      {
+        path: "/host",
+        element: <HostPage />,
+      },
+      {
+        path: "/join",
+        element: <JoinPage />,
+      },
+    ],
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
-)
-
+);
