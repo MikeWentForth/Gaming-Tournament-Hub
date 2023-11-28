@@ -69,19 +69,16 @@
     justify-content: center;
     flex-direction: column;
     background-color: black;
-    width: 50%;
+    width: 800px;
     margin-top: 10vh;
     border: 2px solid goldenrod;
 }
 
-.upcoming-tournaments p{
+.upcoming-tournaments {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: black;
-    width: 50%;
     margin-top: 2vh;
     padding: 10px;
-    border: 2px solid goldenrod;
 }
