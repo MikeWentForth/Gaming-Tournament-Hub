@@ -1,14 +1,14 @@
-import './index.css'
-import { Link } from 'react-router-dom';
-import React, {useState} from 'react';
+import "./index.css";
+import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 const JoinTournament = () => {
-  //   const [tournamentName, setTournamentName] = useState('');
-  // const [tournamentId, setTournamentId] = useState('');
-  // const [startDate, setStartDate] = useState('');
- return (
-    <> Hello World
-     {/* <div className="tournament-page">
+    const [tournamentName, setTournamentName] = useState('');
+  const [tournamentId, setTournamentId] = useState('');
+  const [startDate, setStartDate] = useState('');
+  return (
+    <>
+      {/* <div className="tournament-page">
       <div className="tournament-info">
         <h2>Tournament Information</h2>
         <input
@@ -36,7 +36,7 @@ const JoinTournament = () => {
       </div>
     </div> */}
     </>
- )
-}
+  );
+};
 
 export default JoinTournament;

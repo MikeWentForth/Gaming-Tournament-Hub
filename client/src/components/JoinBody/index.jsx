@@ -9,16 +9,10 @@ function JoinBody() {
 
   const { loading, data } = useQuery(QUERY_TOURNAMENTS);
   // Dummy data for demonstration
-  const dummyResults = [
-    { id: 1, tournamentName: "Tournament 1", game: "Valorant" },
-    { id: 2, tournamentName: "Tournament 2", game: "League of Legends" },
-    // Add more dummy data as needed
-  ];
-  console.log(data);
   const handleSearch = () => {
     // Implement your search logic here
     // For demonstration, setting dummy results on search button click
-    setTournamentResults(dummyResults);
+    setTournamentResults(tournamentResults);
   };
   if (loading) {
     return <div>Loading...</div>;
@@ -31,16 +25,18 @@ function JoinBody() {
       </div>
 
       <div className="tournament-results">
-        {data.tournaments.map((result) => (
-          <TournamentResult
-            key={result._id}
-            tournamentName={result.tournName}
-            game={result.gameName}
-            onViewClick={() => {
-              // Handle the view button click here, e.g., navigate to tournament info page
-              console.log(`Viewing tournament: ${result.tournName}`);
-            }}
-          />
+        {data.tournaments.map((tournament) => (
+          <li key={tournament._id} className="tournament-result">
+            <TournamentResult
+              tournamentId={tournament._id}
+              tournamentName={tournament.tournName}
+              game={tournament.gameName}
+              onViewClick={() => {
+                // Handle the view button click here, e.g., navigate to tournament info page
+                console.log(`Viewing tournament: ${tournament.tournName}`);
+              }}
+            />
+          </li>
         ))}
       </div>
     </div>
