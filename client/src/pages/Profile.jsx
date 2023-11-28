@@ -3,14 +3,14 @@ import { useQuery } from '@apollo/client';
 
 import TournList from '../components/TournList/index';
 
-import { QUERY_TOURNAMENTS, QUERY_ME } from '../utils/queries';
+import { QUERY_USER_TOURNAMENTS, QUERY_ME } from '../utils/queries';
 
 import './profile.css';
 
 const Profile = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(userParam ? QUERY_TOURNAMENTS : QUERY_ME, {
+  const { loading, data } = useQuery(userParam ? QUERY_USER_TOURNAMENTS : QUERY_ME, {
     variables: { username: userParam },
   });
 
