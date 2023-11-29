@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    align-content: end;
+}
+  
+.delete:hover {
+    background-color: darkred;
+}

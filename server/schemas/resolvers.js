@@ -49,27 +49,25 @@ const resolvers = {
         },
         addTournament: async (parent, { tournamentName, gameName, playerSize }, context) => {
             if (context.user) {
-                console.log("logged in user: ", context.user);
+                
+                // create tournament object
                 const tournament = await Tournament.create({
                     tournName: tournamentName,
                     gameName: gameName,
                     playerSize,
                 });
-                console.log("created tourn: ", tournament);
 
                 // update player's hostedTournaments
                 const player = await Player.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { hostedTournaments: tournament._id } }
                 )
-                console.log("adding to player: ", player);
 
                 // update tournament's host
                 const tournamentPlayers = await TournamentPlayers.create({
                     _id: tournament._id,
                     tournamentHost: context.user._id,
                 });
-                console.log("adding to tournament: ", tournamentPlayers);
 
                 return tournament;
             }
@@ -77,14 +75,20 @@ const resolvers = {
         },
         removeTournament: async (parent, { tournamentId }, context) => {
             if (context.user) {
+                // remove object from Tournament model
                 const tournament = await Tournament.findOneAndDelete({
                     _id: tournamentId,
-                    tournamentHost: context.user.username,
                 });
 
+                // remove object from TournamentPlayers model
+                const tournamentPlayers = await TournamentPlayers.findOneAndDelete({
+                    _id: tournamentId,
+                });
+
+                // remove object from Player model
                 await Player.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { tournaments: tournament._id } },
+                    { $pull: { hostedTournaments: tournamentId } },
                     { new: true }
                 );
 
@@ -92,7 +96,11 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
-
+        removeTournaments: async () => {
+            const tournament = await Tournament.deleteMany({});
+            await TournamentPlayers.deleteMany({});
+            return tournament;
+        },
     }
 }
 
