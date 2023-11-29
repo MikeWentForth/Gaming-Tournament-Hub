@@ -39,6 +39,15 @@ export const ADD_TOURNAMENT = gql`
   }
 `;
 
+export const JOIN_TOURNAMENT = gql`
+  mutation joinTournament($tournamentId: ID!) {
+    joinTournament(tournamentId: $tournamentId) {
+      _id
+      username
+    }
+  }
+`;
+
 export const REMOVE_TOURNAMENT = gql`
   mutation removeTournament($tournamentId: ID!) {
     removeTournament(tournamentId: $tournamentId) {

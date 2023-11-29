@@ -73,6 +73,25 @@ const resolvers = {
             }
             throw AuthenticationError;
         },
+        joinTournament: async (parent, { tournamentId }, context) => {
+            if (context.user) {
+
+                // update player's joinedTournaments
+                const player = await Player.findOneAndUpdate(
+                    { _id: context.user._id },
+                    { $addToSet: { joinedTournaments: tournamentId } }
+                )
+
+                // update tournament's joined
+                const tournamentPlayers = await TournamentPlayers.findOneAndUpdate({
+                    _id: tournamentId,
+                    $addToSet: { tournamentPlayers: context.user._id }
+                });
+
+                return player;
+            }
+            throw AuthenticationError;
+        },
         removeTournament: async (parent, { tournamentId }, context) => {
             if (context.user) {
                 // remove object from Tournament model

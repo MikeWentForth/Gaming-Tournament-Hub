@@ -26,6 +26,13 @@ function HomeBody() {
       <div className="upcoming-events-modal">
         <h1>Upcoming Events:</h1>
       </div>
+      <div className='tournament-result'>
+          <h3><u>Tournament</u></h3>
+          <h3><u>Game</u></h3>
+          <h3><u>Open Slots</u></h3>
+          <h3></h3>
+          <h3></h3>
+        </div>
 
       <ul className="upcoming-tournaments">
         {data.tournaments.map((tournament) => (
