@@ -14,12 +14,26 @@ const TournamentBracket = () => {
     return <div>Loading...</div>;
   }
 
+  
+
   console.log(data)
   return (
     <div className="tournament-info">
       <h1>{data.tournament.tournName}</h1>
       <h2>Game: {data.tournament.gameName}</h2>
       <p>Start Date: {data.tournament.createdAt}</p>
+
+      {data.tournament.full ? (
+        <div>
+          <p>Tournament Full</p>
+        </div>
+      ) : (
+        <div>
+          {/* <p>{remainingPlayers} {remainingPlayers === 1 ? 'player' : 'players'} can still join</p> */}
+          <button>Join Tournament</button>
+        </div>
+      )}
+
     </div>
   );
 };
