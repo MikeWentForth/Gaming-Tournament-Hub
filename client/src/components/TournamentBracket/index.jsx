@@ -21,6 +21,7 @@ const TournamentBracket = () => {
           tournamentId: `${id}`,
         },
       });
+      window.location.reload(false);
     } catch (err) {
       console.error(err);
     }
