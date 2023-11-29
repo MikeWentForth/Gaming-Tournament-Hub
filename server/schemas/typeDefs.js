@@ -20,7 +20,6 @@ const typeDefs = `
 
     type TournamentPlayers {
         _id: ID
-        tournament: Tournament
         tournamentHost: Player
         tournamentPlayers: [Player]
     }
