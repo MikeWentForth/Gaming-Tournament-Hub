@@ -17,6 +17,8 @@ function HostBody() {
     refetchQueries: [QUERY_TOURNAMENTS, "tournaments", QUERY_ME, "me"],
   });
 
+  
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,7 +30,7 @@ function HostBody() {
           playerSize: sliderValue,
         },
       });
-
+      
     } catch (err) {
       console.error(err);
     }
@@ -73,19 +75,19 @@ function HostBody() {
     setSuggestionsVisible(false);
   };
 
-//   useEffect(() => {
-//     const handleOutsideClick = (e) => {
-//       if (inputRef.current && !inputRef.current.contains(e.target)) {
-//         setSuggestions([]);
-//       }
-//     };
+  //   useEffect(() => {
+  //     const handleOutsideClick = (e) => {
+  //       if (inputRef.current && !inputRef.current.contains(e.target)) {
+  //         setSuggestions([]);
+  //       }
+  //     };
 
-//     document.addEventListener("click", handleOutsideClick);
+  //     document.addEventListener("click", handleOutsideClick);
 
-//     return () => {
-//       document.removeEventListener("click", handleOutsideClick);
-//     };
-//   }, []);
+  //     return () => {
+  //       document.removeEventListener("click", handleOutsideClick);
+  //     };
+  //   }, []);
   return (
     <div className="host-background">
       <form
@@ -133,6 +135,9 @@ function HostBody() {
           />
         </div>
         <div className="generate-tournament-btn">
+          {/* <Link to={`/tournaments/${addTournament.tournamentId}`}>
+            <button onClick={testFunc}>Generate Tournament</button>
+          </Link> */}
           <button>Generate Tournament</button>
         </div>
       </form>
