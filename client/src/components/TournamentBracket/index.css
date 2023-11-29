@@ -1,13 +1,50 @@
+/* Container for tournament information */
 .tournament-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url('../../assets/HomeBodyBackground.jpg');
+    background-size: cover;
+    padding: 25% 0% 25% 0%;
+    height: 100%;
+    width: 100%;
+    /* Ensure the container takes up the entire width */
+    position: relative;
+    /* Set position to relative for child positioning */
 }
 
+h1 {
+    padding: 10px;
+    background-color: gray;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
+h2 {
+    padding: 10px;
+}
 
+p {
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
-  
- 
-  
+button {
+    padding: 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px green, 0 0 20px green;
+    animation: glowGreen 1s infinite alternate;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: darkgreen;
+    transform: scale(1.1);
+}
+
