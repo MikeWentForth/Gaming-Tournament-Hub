@@ -42,8 +42,11 @@ function HostBody() {
   const [sliderValue, setSliderValue] = useState(4); // Initial value of the slider
 
   const handleSliderChange = (e) => {
-    const value = parseInt(e.target.value);
-    setSliderValue(value);
+    const value = parseInt(e.target.value, 10);
+    if ([4, 8, 16].includes(value)) {
+      setSliderValue(value);
+    }
+    
   };
 
   const [searchValue, setSearchValue] = useState("");
@@ -73,71 +76,61 @@ function HostBody() {
     setSuggestionsVisible(false);
   };
 
-//   useEffect(() => {
-//     const handleOutsideClick = (e) => {
-//       if (inputRef.current && !inputRef.current.contains(e.target)) {
-//         setSuggestions([]);
-//       }
-//     };
+  
 
-//     document.addEventListener("click", handleOutsideClick);
-
-//     return () => {
-//       document.removeEventListener("click", handleOutsideClick);
-//     };
-//   }, []);
-  return (
-    <div className="host-background">
-      <form
-        className="flex-row justify-center justify-space-between-md align-center"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="searchBar">
-          <input
-            type="text"
-            placeholder="Search for a game..."
-            value={searchValue}
-            onChange={handleSearchChange}
-          />
-          {suggestions.length > 0 && (
-            <ul className="suggestions">
-              {suggestions.map((game, index) => (
-                <li key={index} onClick={() => handleSuggestionClick(game)}>
-                  {game}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-        <div
-          className={`tournament-size-slider ${
-            suggestionsVisible ? "suggestions-visible" : ""
-          }`}
+    return (
+      <div className="host-background">
+        <form
+          className="flex-row justify-center justify-space-between-md align-center"
+          onSubmit={handleFormSubmit}
         >
-          <h2>Tournament Size Slider</h2>
-          <input
-            type="range"
-            min="4"
-            max="16"
-            value={sliderValue}
-            onChange={handleSliderChange}
-          />
-          <p>Number of Players: {sliderValue}</p>
-        </div>
-        <div className="tournament-name">
-          <input
-            type="text"
-            placeholder="Enter tournament name..."
-            value={tournamentName}
-            onChange={handleTournamentNameChange}
-          />
-        </div>
-        <div className="generate-tournament-btn">
-          <button>Generate Tournament</button>
-        </div>
-      </form>
-    </div>
-  );
-}
+          <div className="searchBar">
+            <input
+              type="text"
+              placeholder="Search for a game..."
+              value={searchValue}
+              onChange={handleSearchChange}
+            />
+            {suggestions.length > 0 && (
+              <ul className="suggestions">
+                {suggestions.map((game, index) => (
+                  <li key={index} onClick={() => handleSuggestionClick(game)}>
+                    {game}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+          <div
+            className={`tournament-size-slider ${suggestionsVisible ? "suggestions-visible" : ""
+              }`}
+          >
+            <h2>Tournament Size Slider</h2>
+            <input
+              type="range"
+              min="4"
+              max="16"
+              value={sliderValue}
+              onChange={handleSliderChange}
+              step="4"
+              list="allowedValues"
+            />
+            <p>Number of Players: {sliderValue}</p>
+          </div>
+          <div className="tournament-name">
+            <input
+              type="text"
+              placeholder="Enter tournament name..."
+              value={tournamentName}
+              onChange={handleTournamentNameChange}
+            />
+          </div>
+          <div className="generate-tournament-btn">
+            <button>Generate Tournament</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
 
-export default HostBody;
+  export default HostBody;

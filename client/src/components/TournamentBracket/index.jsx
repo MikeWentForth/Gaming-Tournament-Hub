@@ -1,42 +1,27 @@
 import "./index.css";
-import { Link } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import React, { useState } from "react";
+import { useQuery } from "@apollo/client";
+import { QUERY_SINGLE_TOURNAMENT } from "../../utils/queries";
 
-const JoinTournament = () => {
-    const [tournamentName, setTournamentName] = useState('');
-  const [tournamentId, setTournamentId] = useState('');
-  const [startDate, setStartDate] = useState('');
+const TournamentBracket = () => {
+  const {id} = useParams();
+  
+  const { loading, data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
+    variables: { tournamentId: `${id}` }
+  });
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  console.log(data)
   return (
-    <>
-      {/* <div className="tournament-page">
-      <div className="tournament-info">
-        <h2>Tournament Information</h2>
-        <input
-          type="text"
-          placeholder="Tournament Name"
-          value={tournamentName}
-          onChange={(e) => setTournamentName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Tournament ID"
-          value={tournamentId}
-          onChange={(e) => setTournamentId(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Start Date"
-          value={startDate}
-          onChange={(e) => setStartDate(e.target.value)}
-        />
-        <button onClick={handleJoinClick}>Join</button>
-      </div>
-      <div className="tournament-bracket">
-        <h2>Tournament Bracket</h2>
-      </div>
-    </div> */}
-    </>
+    <div className="tournament-info">
+      <h1>{data.tournament.tournName}</h1>
+      <h2>Game: {data.tournament.gameName}</h2>
+      <p>Start Date: {data.tournament.createdAt}</p>
+    </div>
   );
 };
 
-export default JoinTournament;
+export default TournamentBracket;

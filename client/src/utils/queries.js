@@ -43,7 +43,7 @@ export const QUERY_SINGLE_TOURNAMENT = gql`
     tournament(tournamentId: $tournamentId) {
       _id
       tournName
-      tournamentHost
+      gameName
       createdAt
       playerSize
       join

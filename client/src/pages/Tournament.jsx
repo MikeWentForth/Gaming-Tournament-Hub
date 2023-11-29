@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import JoinTournament from '../components/TournamentBracket/index';
+import TournamentBracket from '../components/TournamentBracket/index';
 
 
 
@@ -7,7 +7,7 @@ const Tournament = () => {
 
  return (
  <div>
-    <JoinTournament/>
+    <TournamentBracket />
  </div>
  )
 }
