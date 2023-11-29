@@ -48,6 +48,7 @@ const typeDefs = `
         login(email: String!, password: String!): Auth
         addTournament(tournamentName: String!, gameName: String!, playerSize: Int): Tournament
         removeTournament(tournamentId: ID!): Tournament
+        removeTournaments: Tournament
         joinTournament(playerId: ID!, tournamentId: ID!): Tournament 
         leaveTournament(playerId: ID!, tournamentId: ID!): Tournament   
     }

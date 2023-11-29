@@ -17,6 +17,8 @@ function HostBody() {
     refetchQueries: [QUERY_TOURNAMENTS, "tournaments", QUERY_ME, "me"],
   });
 
+  
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -28,7 +30,7 @@ function HostBody() {
           playerSize: sliderValue,
         },
       });
-
+      
     } catch (err) {
       console.error(err);
     }
