@@ -14,7 +14,7 @@ function HostBody() {
   const [tournamentName, setTournamentName] = useState("");
 
   const [addTournament, { error }] = useMutation(ADD_TOURNAMENT, {
-    refetchQueries: [QUERY_TOURNAMENTS, "getTournaments", QUERY_ME, "me"],
+    refetchQueries: [QUERY_TOURNAMENTS, "tournaments", QUERY_ME, "me"],
   });
 
   const handleFormSubmit = async (event) => {
@@ -26,7 +26,6 @@ function HostBody() {
           tournamentName,
           gameName: searchValue,
           playerSize: sliderValue,
-          tournamentHost: Auth.getProfile().data.username,
         },
       });
 

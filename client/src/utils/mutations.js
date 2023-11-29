@@ -34,7 +34,6 @@ export const ADD_TOURNAMENT = gql`
       playerSize
       join
       full
-      tournamentHost
       createdAt
     }
   }
@@ -48,7 +47,6 @@ export const REMOVE_TOURNAMENT = gql`
       playerSize
       join
       full
-      tournamentHost
       createdAt
     }
   }
