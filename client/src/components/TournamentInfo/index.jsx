@@ -9,7 +9,7 @@ function TournamentResult({ tournamentId, tournamentName, game, onViewClick }) {
   const { loading, data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
     variables: { tournamentId },
   });
-  
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -28,7 +28,7 @@ function TournamentResult({ tournamentId, tournamentName, game, onViewClick }) {
       <p>{tournamentName}</p>
       <p>{game}</p>
       <p>
-        {currentSize} / {maxSize}
+        {remainingPlayers} / {maxSize}
       </p>
       <Link to={`/tournaments/${tournamentId}`}>
         <button onClick={onViewClick}>View</button>

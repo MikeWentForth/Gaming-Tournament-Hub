@@ -29,7 +29,7 @@ function HomeBody() {
       <div className='tournament-result'>
           <h3><u>Tournament</u></h3>
           <h3><u>Game</u></h3>
-          <h3><u>Current Size</u></h3>
+          <h3><u>Open Slots</u></h3>
           <h3></h3>
           <h3></h3>
         </div>

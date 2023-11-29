@@ -48,8 +48,8 @@ const typeDefs = `
         addTournament(tournamentName: String!, gameName: String!, playerSize: Int): Tournament
         removeTournament(tournamentId: ID!): Tournament
         removeTournaments: Tournament
-        joinTournament(playerId: ID!, tournamentId: ID!): Tournament 
-        leaveTournament(playerId: ID!, tournamentId: ID!): Tournament   
+        joinTournament(tournamentId: ID!): Player 
+        leaveTournament(playerId: ID!, tournamentId: ID!): Player   
     }
 
 `;

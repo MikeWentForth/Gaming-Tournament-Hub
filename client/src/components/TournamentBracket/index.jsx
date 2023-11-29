@@ -1,16 +1,30 @@
 import "./index.css";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import React, { useState } from "react";
-import { useQuery } from "@apollo/client";
-import { QUERY_SINGLE_TOURNAMENT } from "../../utils/queries";
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_SINGLE_TOURNAMENT, QUERY_ME } from "../../utils/queries";
+import { JOIN_TOURNAMENT } from "../../utils/mutations";
 
 const TournamentBracket = () => {
-  const {id} = useParams();
-  
+  const { id } = useParams();
+
   const { loading, data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
-    variables: { tournamentId: `${id}` }
+    variables: { tournamentId: `${id}` },
   });
 
+  const [joinTournament, { error }] = useMutation(JOIN_TOURNAMENT);
+
+  const handleJoin = async () => {
+    try {
+      await joinTournament({
+        variables: {
+          tournamentId: `${id}`,
+        },
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -20,11 +34,12 @@ const TournamentBracket = () => {
 
   const players = data.tournamentPlayers;
 
+  if (players.tournamentPlayers.includes())
+  console.log(players.tournamentPlayers);
+
   const currentSize = players.tournamentPlayers.length;
 
   const remainingPlayers = maxSize - currentSize;
-
-  console.log(players);
 
   return (
     <div className="tournament-info">
@@ -39,11 +54,13 @@ const TournamentBracket = () => {
         </div>
       ) : (
         <div>
-          <p>{remainingPlayers} {remainingPlayers === 1 ? 'player' : 'players'} can still join</p>
-          <button>Join Tournament</button>
+          <p>
+            {remainingPlayers} {remainingPlayers === 1 ? "player" : "players"}{" "}
+            can still join
+          </p>
+          <button onClick={handleJoin}>Join Tournament</button>
         </div>
       )}
-
     </div>
   );
 };
