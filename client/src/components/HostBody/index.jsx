@@ -1,5 +1,5 @@
 /* eslint-disable no-unexpected-multiline */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
 import "./index.css";
 
@@ -11,26 +11,33 @@ import { QUERY_TOURNAMENTS, QUERY_ME } from "../../utils/queries";
 import Auth from "../../utils/auth";
 
 function HostBody() {
+  const navigate = useNavigate();
   const [tournamentName, setTournamentName] = useState("");
 
+  // const [addTournament, { error }] = useMutation(ADD_TOURNAMENT, {
+  //   refetchQueries: [QUERY_TOURNAMENTS, "tournaments", QUERY_ME, "me"],
+  // });
   const [addTournament, { error }] = useMutation(ADD_TOURNAMENT, {
     refetchQueries: [QUERY_TOURNAMENTS, "tournaments", QUERY_ME, "me"],
+    onCompleted: (data) => {
+      // Assuming the response from the mutation contains the ID of the created tournament
+      const tournamentId = data.addTournament._id;
+      // Navigate to the generated tournament page
+      navigate(`/tournaments/${tournamentId}`);
+    },
   });
-
-  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addTournament({
+      await addTournament({
         variables: {
           tournamentName,
           gameName: searchValue,
           playerSize: sliderValue,
         },
       });
-      
     } catch (err) {
       console.error(err);
     }
@@ -48,7 +55,6 @@ function HostBody() {
     if ([4, 8, 16].includes(value)) {
       setSliderValue(value);
     }
-    
   };
 
   const [searchValue, setSearchValue] = useState("");
@@ -78,61 +84,63 @@ function HostBody() {
     setSuggestionsVisible(false);
   };
 
-  
-
-    return (
-      <div className="host-background">
-        <form
-          className="flex-row justify-center justify-space-between-md align-center"
-          onSubmit={handleFormSubmit}
+  return (
+    <div className="host-background">
+      <form
+        className="flex-row justify-center justify-space-between-md align-center"
+        onSubmit={handleFormSubmit}
+      >
+        <div className="searchBar">
+          <input
+            type="text"
+            placeholder="Search for a game..."
+            value={searchValue}
+            onChange={handleSearchChange}
+          />
+          {suggestions.length > 0 && (
+            <ul className="suggestions">
+              {suggestions.map((game, index) => (
+                <li key={index} onClick={() => handleSuggestionClick(game)}>
+                  {game}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div
+          className={`tournament-size-slider ${
+            suggestionsVisible ? "suggestions-visible" : ""
+          }`}
         >
-          <div className="searchBar">
-            <input
-              type="text"
-              placeholder="Search for a game..."
-              value={searchValue}
-              onChange={handleSearchChange}
-            />
-            {suggestions.length > 0 && (
-              <ul className="suggestions">
-                {suggestions.map((game, index) => (
-                  <li key={index} onClick={() => handleSuggestionClick(game)}>
-                    {game}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-          <div
-            className={`tournament-size-slider ${suggestionsVisible ? "suggestions-visible" : ""
-              }`}
-          >
-            <h2>Tournament Size Slider</h2>
-            <input
-              type="range"
-              min="4"
-              max="16"
-              value={sliderValue}
-              onChange={handleSliderChange}
-              step="4"
-              list="allowedValues"
-            />
-            <p>Number of Players: {sliderValue}</p>
-          </div>
-          <div className="tournament-name">
-            <input
-              type="text"
-              placeholder="Enter tournament name..."
-              value={tournamentName}
-              onChange={handleTournamentNameChange}
-            />
-          </div>
-          <div className="generate-tournament-btn">
+          <h2>Tournament Size Slider</h2>
+          <input
+            type="range"
+            min="4"
+            max="16"
+            value={sliderValue}
+            onChange={handleSliderChange}
+            step="4"
+            list="allowedValues"
+          />
+          <p>Number of Players: {sliderValue}</p>
+        </div>
+        <div className="tournament-name">
+          <input
+            type="text"
+            placeholder="Enter tournament name..."
+            value={tournamentName}
+            onChange={handleTournamentNameChange}
+          />
+        </div>
+        <div className="generate-tournament-btn">
+          {/* <Link to={`/tournaments/${addTournament.tournamentId}`}>
             <button>Generate Tournament</button>
-          </div>
-        </form>
-      </div>
-    );
-  }
+          </Link> */}
+          <button type="submit">Generate Tournament</button>
+        </div>
+      </form>
+    </div>
+  );
+}
 
-  export default HostBody;
+export default HostBody;

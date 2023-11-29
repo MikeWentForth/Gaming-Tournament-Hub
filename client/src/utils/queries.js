@@ -52,6 +52,21 @@ export const QUERY_SINGLE_TOURNAMENT = gql`
   }
 `;
 
+export const QUERY_TOURNAMENT_PLAYERS = gql`
+  query getTournamentPlayers($tournamentId: ID!) {
+    tournamentPlayers(tournamentId: $tournamentId) {
+      tournamentHost {
+        _id
+        username
+      }
+      tournamentPlayers {
+        _id
+        username
+      }
+    }
+  }
+`
+;
 export const QUERY_ME = gql`
   query me {
     me {
