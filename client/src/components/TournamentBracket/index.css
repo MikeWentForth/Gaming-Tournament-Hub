@@ -14,7 +14,7 @@
     /* Set position to relative for child positioning */
 }
 
-h1 {
+.tournament-info h1 {
     padding: 10px;
     background-color: gray;
     border: 2px solid goldenrod;
@@ -22,16 +22,16 @@ h1 {
     margin-bottom: 10px;
 }
 
-h2 {
+.tournament-info h2 {
     padding: 10px;
 }
 
-p {
+.tournament-info p {
     padding: 10px;
     margin-bottom: 10px;
 }
 
-button {
+.tournament-info button {
     padding: 10px;
     background-color: green;
     color: white;
@@ -42,7 +42,7 @@ button {
     transition: background-color 0.3s ease; 
 }
 
-button:hover {
+.tournament-info button:hover {
     cursor: pointer;
     background-color: darkgreen;
     transform: scale(1.1);
