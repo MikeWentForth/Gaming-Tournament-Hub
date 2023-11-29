@@ -7,7 +7,7 @@ import { QUERY_SINGLE_TOURNAMENT } from "../../utils/queries";
 const TournamentBracket = () => {
   const {id} = useParams();
   
-  const { loading, data: data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
+  const { loading, data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
     variables: { tournamentId: `${id}` }
   });
 
