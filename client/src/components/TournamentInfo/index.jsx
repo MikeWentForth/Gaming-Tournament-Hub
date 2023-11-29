@@ -6,9 +6,13 @@ import { useQuery } from "@apollo/client";
 import { QUERY_SINGLE_TOURNAMENT } from "../../utils/queries";
 
 function TournamentResult({ tournamentId, tournamentName, game, onViewClick }) {
-  const { data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
+  const { loading, data } = useQuery(QUERY_SINGLE_TOURNAMENT, {
     variables: { tournamentId },
   });
+  
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   const maxSize = data.tournament.playerSize;
 
