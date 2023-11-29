@@ -49,11 +49,6 @@ export const QUERY_SINGLE_TOURNAMENT = gql`
       join
       full
     }
-  }
-`;
-
-export const QUERY_TOURNAMENT_PLAYERS = gql`
-  query getTournamentPlayers($tournamentId: ID!) {
     tournamentPlayers(tournamentId: $tournamentId) {
       tournamentHost {
         _id
@@ -65,8 +60,8 @@ export const QUERY_TOURNAMENT_PLAYERS = gql`
       }
     }
   }
-`
-;
+`;
+
 export const QUERY_ME = gql`
   query me {
     me {
