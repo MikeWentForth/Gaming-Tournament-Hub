@@ -76,9 +76,7 @@
 
 .upcoming-tournaments {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 2vh;
-    padding: 10px;
+    margin-top: 20px;
+    list-style: none;
 }
