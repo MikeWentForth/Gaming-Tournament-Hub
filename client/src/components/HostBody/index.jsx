@@ -133,9 +133,6 @@ function HostBody() {
           />
         </div>
         <div className="generate-tournament-btn">
-          {/* <Link to={`/tournaments/${addTournament.tournamentId}`}>
-            <button>Generate Tournament</button>
-          </Link> */}
           <button type="submit">Generate Tournament</button>
         </div>
       </form>
