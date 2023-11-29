@@ -19,7 +19,7 @@ const resolvers = {
             return Tournament.find();
         },
         tournamentPlayers: async (parent, { tournamentId }) => {
-            return TournamentPlayers.findOne({ _id: tournamentId });
+            return TournamentPlayers.findOne({ _id: tournamentId }).populate('tournamentHost').populate('tournamentPlayers');
         },
         me: async (parent, args, context) => {
             if (context.user) {
