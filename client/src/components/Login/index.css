@@ -111,4 +111,44 @@
   margin-left: 40px;
 }
 
+@media only screen and (max-width: 600px) {
+  .login-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .arena-header {
+    font-size: 30px; 
+  }
+
+  .login-card {
+    width: 90%; 
+    max-width: 350px; 
+  }
+
+  .card-header {
+    font-size: 20px;
+  }
+
+  .form-input {
+    font-size: 13px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+  }
+
+  .error-message {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 80%;
+    margin-top: 0px;
+    margin-bottom: -190px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
