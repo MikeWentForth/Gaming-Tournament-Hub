@@ -20,7 +20,7 @@ https://game-tourney-hub-8015c3047dd6.herokuapp.com/
 ## Languages & Dependencies
 HTML, CSS, Javascript, React, GraphQL, Node JS, Express JS, Mongo DB, Mongoose, Apollo, Toastify, Framer Motion
 ## How to Use This Application:
-To start the applications you must first do a npm install then after you do a npm start. Then open your browser and type in Localhost:3001/.
+To start the applications you must first do a npm i then after you do a npm run develop . Then open your browser and type in Localhost:3000/.
 After you done all this you can you sign in if you have pre-existing account or make a new account.
 ## Contributors
 - Javier Burgara
