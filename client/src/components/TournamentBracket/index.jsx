@@ -36,7 +36,7 @@ const TournamentBracket = () => {
   const players = data.tournamentPlayers;
 
   if (players.tournamentPlayers.includes())
-  // console.log(players.tournamentPlayers);
+  console.log(players.tournamentPlayers);
 
   const currentSize = players.tournamentPlayers.length;
 
