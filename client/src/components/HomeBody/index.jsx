@@ -43,7 +43,7 @@ function HomeBody() {
               game={tournament.gameName}
               onViewClick={() => {
                 // Add your logic for handling view click if needed
-                console.log(`Clicked on ${tournament.tournName}`);
+                // console.log(`Clicked on ${tournament.tournName}`);
               }}
             />
           </li>

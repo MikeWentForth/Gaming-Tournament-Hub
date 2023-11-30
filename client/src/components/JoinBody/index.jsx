@@ -40,7 +40,7 @@ function JoinBody() {
               game={tournament.gameName}
               onViewClick={() => {
                 // Handle the view button click here, e.g., navigate to tournament info page
-                console.log(`Viewing tournament: ${tournament.tournName}`);
+                // console.log(`Viewing tournament: ${tournament.tournName}`);
               }}
             />
           </li>

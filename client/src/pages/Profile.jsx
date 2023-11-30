@@ -21,7 +21,7 @@ const Profile = () => {
   }
 
   if (!user?.username) {
-    console.log("no username");
+    // console.log("no username");
     return (
       <h4>
         You need to be logged in to see this. Use the navigation links above to
